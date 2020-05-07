@@ -1,0 +1,52 @@
+<div class="alert alert-danger" *ngIf="errorinfo!=undefined">{{errorinfo.message}} </div>
+
+  <table *ngIf="val" class="table table-bordered">
+  <thead>
+    
+      <tr>
+        <th >STOCK_ID</th>
+        <th (click)='change("expiryDate")' >EXPIRY_DATE</th>
+        <th (click)='change("manufactureDate")'>MANUFACTURE_DATE</th>
+        <th >NAME</th>
+        <th>PRICE_PER_UNIT</th>
+        <th >QUALITY_CHECK</th>
+        <th >QUANTITY_UNIT</th>
+        <th >QUANTITY_VALUE</th>
+        <th >SUPPLIER_ID</th>
+        <th >WAREHOUSE_ID</th>
+        <th>ACTION</th>
+      </tr>
+  </thead>
+  <tbody>
+     
+        <tr *ngFor="let stock of Stock">
+          <td>{{stock.stockId}}</td>
+          <td>{{stock.expiryDate}}</td>
+          <td>{{stock.manufactureDate}}</td>
+          <td>{{stock.name}}</td>
+          <td>{{stock.pricePerUnit}}</td>
+          <td>{{stock.qualityCheck}}</td>
+          <td>{{stock.quantityUnit}}</td>
+          <td>{{stock.quantityValue}}</td>
+          <td>{{stock.supplierId}}</td>
+          <td>{{stock.warehouseId}}</td>
+          <td><button (click)="onclickUpdateDetails(stock)" class="btn btn-success">edit </button></td>
+        </tr>
+  </tbody>
+  </table>
+  
+
+<pre *ngIf="val1">
+  STOCK_ID          :<input [(ngModel)]="id"/>
+  EXPIRY_DATE       :<input type="date" id="start" [(ngModel)]="expiDate" min="2020-02-03" required/>
+  <label for="manuDate">MANUFACTURE_DATE  :</label><input  type="date" id="manuDate" [(ngModel)]="manuDate" min="2019-02-01" required/>
+  NAME              :<input [(ngModel)]="stockname"/>
+  PRICE_PER_UNIT    :<input [(ngModel)]="priPUnit"/>
+  QUALITY_CHECK     :<input [(ngModel)]="qualCheck"/>
+  QUANTITY_UNIT     :<input [(ngModel)]="quantUnit"/>
+  QUANTITY_VALUE    :<input [(ngModel)]="quanValue"/>
+  SUPPLIER_ID       :<input [(ngModel)]="supId"/>
+  WAREHOUSE_ID      :<input [(ngModel)]="wareId"/>
+ <button (click)="updateStock(stock)" class="btn btn-success">Update Details</button>
+</pre>
+

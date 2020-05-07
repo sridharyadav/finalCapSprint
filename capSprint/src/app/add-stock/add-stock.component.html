@@ -1,0 +1,131 @@
+
+
+<div class="container-fluid"> 
+  <form #addstockForm="ngForm">
+  
+ 
+      <div class="form-group">
+        <label ng-controller="MyController">Name</label>
+        <input type = "text" id="name" name="name" class ="form-control" 
+        [(ngModel)]="stock.name" minlength="4" pattern="[a-zA-Z][a-zA-Z ]+" placeholder="Enter name" required #name=ngModel>
+    
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div [hidden]="!name.hasError('pattern')">Only Alphabets allowed</div>
+  </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+      <label>SupplierId</label>
+      <input type = "text" id="supplierId"  name="supplierId" class ="form-control" 
+      [(ngModel)]="stock.supplierId" placeholder="Enter supplierId" required #supplierId=ngModel>
+        
+<div *ngIf="supplierId.invalid && (supplierId.dirty || supplierId.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="supplierId.errors.required">
+    SupplierId is required.
+  </div>
+  </div>
+  </div>
+ 
+  
+  <div class="form-group">
+    <label>QuantityValue</label>
+    <input type = "number" id="quantityValue"  name="quantityValue" class ="form-control" 
+    [(ngModel)]="stock.quantityValue" pattern="[0-9]*" placeholder="Enter quantityValue"  required #quantityValue=ngModel>
+       
+<div *ngIf="quantityValue.invalid && (quantityValue.dirty || quantityValue.touched)"
+class="alert alert-danger">
+
+<div *ngIf="quantityValue.errors.required">
+  QuantityValue is required.
+</div>
+<div [hidden]="!quantityValue.hasError('pattern')">QuantityValue numberr should be only numbers</div>
+</div>
+</div>
+
+
+
+
+<div class="form-group">
+  <label>QuantityUnit</label>
+  <input type = "number"  name="quantityUnit" id="quantityUnit" class ="form-control"
+   [(ngModel)]="stock.quantityUnit" pattern="[0-9]*" placeholder="Enter quantityUnit" required #quantityUnit=ngModel>
+      
+<div *ngIf="quantityUnit.invalid && (quantityUnit.dirty || quantityUnit.touched)"
+class="alert alert-danger">
+
+<div *ngIf="quantityUnit.errors.required">
+  QuantityUnit is required.
+</div>
+<div [hidden]="!quantityUnit.hasError('pattern')">QuantityUnit numberr should be only numbers</div>
+</div>
+</div>
+
+
+
+<div class="form-group">
+  <label>PricePerUnit</label>
+  <input type = "number"  name="pricePerUnit" class ="form-control" 
+  [(ngModel)]="stock.pricePerUnit" pattern="[0-9]*" placeholder="Enter pricePerUnit" required #pricePerUnit=ngModel>
+      
+<div *ngIf="pricePerUnit.invalid && (pricePerUnit.dirty || pricePerUnit.touched)"
+class="alert alert-danger">
+
+<div *ngIf="pricePerUnit.errors.required">
+  PricePerUnit is required.
+</div>
+<div [hidden]="!pricePerUnit.hasError('pattern')">PricePerUnit numberr should be only numbers</div>
+</div>
+</div>
+
+<div class="form-group">
+  <label for="qualityCheck">QualityCheck</label>
+  <input type = "text"  name="qualityCheck" class ="form-control" 
+  [(ngModel)]="stock.qualityCheck" placeholder="Enter Good/Average/Poor" required #qualityCheck=ngModel>
+      
+<div *ngIf="qualityCheck.invalid && (qualityCheck.dirty || qualityCheck.touched)"
+class="alert alert-danger">
+
+<div *ngIf="qualityCheck.errors.required">
+  QualityCheck is required.
+</div>
+</div>
+</div>
+
+
+
+   
+<div class="form-group">
+  <label>WarehouseId</label>
+  <input type = "text"  name="warehouseId" class ="form-control" 
+  [(ngModel)]="stock.warehouseId" placeholder="Enter warehouseId" required #warehouseId=ngModel>
+     
+<div *ngIf="warehouseId.invalid && (warehouseId.dirty || warehouseId.touched)"
+class="alert alert-danger">
+
+<div *ngIf="warehouseId.errors.required">
+  WarehouseId is required.
+</div>
+</div>
+</div>
+
+
+  
+      <button class="btn btn-primary" type="submit" [disabled]="addstockForm.form.invalid" (click)="insertStock()">Submit</button> 
+  </form>
+  </div>
+  
+
+  

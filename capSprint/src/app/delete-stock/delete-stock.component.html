@@ -1,0 +1,40 @@
+
+<h2 class="text-center">DELETE STOCK</h2>
+
+<div >
+<div >
+    <div >
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>STOCK_ID</th>
+            <th>EXPIRY_DATE</th>
+            <th>MANUFACTURE_DATE</th>
+            <th>NAME</th>
+            <th>PRICE_PER_UNIT</th>
+            <th>QUALITY_CHECK</th>
+            <th>QUANTITY_UNIT</th>
+            <th>QUANTITY_VALUE</th>
+            <th>SUPPLIER_ID</th>
+            <th>WAREHOUSE_ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stock of stocks">
+            <td>{{stock.stockId}}</td>
+            <td>{{stock.expiryDate}}</td>
+            <td>{{stock.manufactureDate}}</td>
+            <td>{{stock.name}}</td>
+            <td>{{stock.pricePerUnit}}</td>
+            <td>{{stock.qualityCheck}}</td>
+            <td>{{stock.quantityUnit}}</td>
+            <td>{{stock.quantityValue}}</td>
+            <td>{{stock.supplierId}}</td>
+            <td>{{stock.warehouseId}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteStock(stock.stockId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
+</div>

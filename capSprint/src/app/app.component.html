@@ -1,0 +1,32 @@
+
+<nav  class="navbar navbar-dark bg-success">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="btn btn-secondary" href="#">Home <span class="sr-only">(current)</span></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      
+    <ul><a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+        
+         <li><a class="dropdown-item" routerLinkActive="active"  href="#" routerLink="deleteItem" class="dropdown-item" >DeleteStock</a></li>
+         <li> <a class="dropdown-item" routerLinkActive="active" href="#" routerLink="getProductSpecs" class="dropdown-item" >SearchById</a></li>
+         <li> <a class="dropdown-item" routerLinkActive="active" href="#" routerLink="updateProduct" class="dropdown-item" >updateStock</a></li>
+         <li><a class="dropdown-item" routerLinkActive="active" href="#"  routerLink="addStock" class="dropdown-item" >addStock</a></li>
+        </div>
+        
+      </ul>  
+   
+  
+
+
+      
+  </div>
+  
+  </div>
+  
+</nav>
+
+<router-outlet></router-outlet>

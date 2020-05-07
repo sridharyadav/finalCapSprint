@@ -1,0 +1,50 @@
+
+<div >
+    <div class="row">
+               <div id="custom-search-input" >
+                                <div class="input-group col-md-14" style="text-align: center">
+                  
+                                  
+                                     <input class="search-query form-control" placeholder="Search With stockId"  input [(ngModel)]="stockId" >   
+                                </div>
+                            </div>
+    </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorinfo!=undefined">{{errorinfo.message}} </div>
+<div >
+<div >
+    <div >
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+          <th>STOCK_ID</th>
+          <th>EXPIRY_DATE</th>
+          <th>MANUFACTURE_DATE</th>
+          <th>NAME</th>
+          <th>PRICE_PER_UNIT</th>
+          <th>QUALITY_CHECK</th>
+          <th>QUANTITY_UNIT</th>
+          <th>QUANTITY_VALUE</th>
+          <th>SUPPLIER_ID</th>
+          <th>WAREHOUSE_ID</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+       
+          <tr *ngFor="let stock of Stock | stockFilter : stockId">
+            <td>{{stock.stockId}}</td>
+            <td>{{stock.expiryDate}}</td>
+            <td>{{stock.manufactureDate}}</td>
+            <td>{{stock.name}}</td>
+            <td>{{stock.pricePerUnit}}</td>
+            <td>{{stock.qualityCheck}}</td>
+            <td>{{stock.quantityUnit}}</td>
+            <td>{{stock.quantityValue}}</td>
+            <td>{{stock.supplierId}}</td>
+            <td>{{stock.warehouseId}}</td>
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
